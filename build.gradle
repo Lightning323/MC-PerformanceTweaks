@@ -1,7 +1,15 @@
 buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven {
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+        maven{
+            url = "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
         mavenCentral()
     }
     dependencies {
@@ -159,6 +167,8 @@ dependencies {
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    //https://www.cursemaven.com/
+    //implementation fg.deobf("curse.maven:rubidium-574856:4952685")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
