@@ -6,7 +6,8 @@
   "refmap": "perf_tweaks.refmap.json",
   "mixins": [
     "alternateCurrent.RedStoneWireBlockMixin",
-    "alternateCurrent.ServerLevelMixin"
+    "alternateCurrent.ServerLevelMixin",
+    "railOptimization.PoweredRailBlockMixin"
   ],
   "client": [
     "entityCollisionFix.MixinEntity",
