@@ -9,3 +9,6 @@ Credit: https://github.com/SpaceWalkerRS/alternate-current/tree/1.20
 
 ## Entity Collision FPS Fix `ec`
 Credit: https://github.com/CorgiTaco-Archive/No-Client-Side-Entity-Collision-Checks/tree/1.19.X
+
+## More Culling `mc`
+Credit: https://github.com/FxMorin/MoreCulling/tree/master?tab=readme-ov-file
