@@ -1,5 +1,5 @@
 # MC-PerformanceTweaks
-Client performance optimizations for Minecraft, packaged into a single mod.
+Client and Server performance optimizations for Minecraft, packaged into a single mod.
 
 ## Rail Optimization `ro`
 Credit: https://github.com/FxMorin/RailOptimization/tree/master
