@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "perf_tweaks.refmap.json",
   "mixins": [
-    "alternateCurrent.RedStoneWireBlockMixin",
-    "alternateCurrent.ServerLevelMixin",
     "railOptimization.PoweredRailBlockMixin"
   ],
   "client": [
