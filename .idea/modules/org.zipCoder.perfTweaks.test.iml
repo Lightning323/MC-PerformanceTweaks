@@ -13,7 +13,7 @@
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="mappingFile" value="C:\Users\Patron\Documents\GitHub\MC-PerformanceTweaks\build\createMcpToSrg\output.tsrg" />
+    <option name="mappingFile" value="C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\build\createMcpToSrg\output.tsrg" />
     <option name="mcpVersion" value="official_1.20.1" />
     <option name="minecraftVersion" value="1.20.1" />
     <option name="platformVersion" value="47.3.29" />
