@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
+import org.lightning323.performancetweaks.config.ConfigManager;
 
 public interface Config {
 
@@ -41,7 +42,7 @@ public interface Config {
 
 		private final Path path;
 
-		private boolean enabled = true;
+		private boolean enabled = ConfigManager.INSTANCE.enableAlternateCurrentByDefault;
 		private UpdateOrder updateOrder = UpdateOrder.HORIZONTAL_FIRST_OUTWARD;
 
 		private boolean modified;

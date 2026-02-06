@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.mixin.entityCollisionFix;
+package org.lightning323.mixin.entityCollisionFix;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

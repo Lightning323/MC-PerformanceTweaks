@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.mixin.railOptimization;
+package org.lightning323.mixin.railOptimization;
 
 
 import net.minecraft.core.BlockPos;

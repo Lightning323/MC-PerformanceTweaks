@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.mixin.alternateCurrent;
+package org.lightning323.mixin.alternateCurrent;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

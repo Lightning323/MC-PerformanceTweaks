@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.lightning323.alternate.current.command.AlternateCurrentCommand;
 import org.lightning323.performancetweaks.Performancetweaks;
+import org.lightning323.performancetweaks.config.ConfigManager;
 
 @Mod(Performancetweaks.MOD_ID)
 public final class PerformancetweaksForge {
@@ -17,6 +18,8 @@ public final class PerformancetweaksForge {
         MinecraftForge.EVENT_BUS.register(this);
         // Run our common setup.
         Performancetweaks.init();
+
+        ConfigManager.init(net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().toFile(), Performancetweaks.MOD_ID);
     }
 
     @SubscribeEvent

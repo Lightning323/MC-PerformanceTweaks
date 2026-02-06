@@ -4,28 +4,24 @@
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] Transforming 5 transformer(s) from C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\devlibs\performancetweaks-common-1.0.0-dev.jar to C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionFabric.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@22a5b5ae
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@2d98c42
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@6c52c08a
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@650f6741
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@342d452e
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@4287c050
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@58ef16f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@615e017b
 [Architectury Transformer DEBUG] Transforming from C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\devlibs\performancetweaks-common-1.0.0-dev.jar to C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionFabric.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing org/lightning323/RailOptimization/RailLogic with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/RailOptimization/PoweredRailBlockInvoker with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/Performancetweaks with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/railOptimization/PoweredRailBlockMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/MultiplayerServerListPingerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/ConnectScreenThreadMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/AddressResolverMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/entityCollisionFix/MixinLivingEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/entityCollisionFix/MixinEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/ServerLevelMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/RedStoneWireBlockMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/MinecraftServerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/utils/DummyClass with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/impl/InetAddressPatcher with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/FastIpPingMod with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/config/ModConfig with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/config/ConfigManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/railOptimization/PoweredRailBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/entityCollisionFix/MixinLivingEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/entityCollisionFix/MixinEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/ServerLevelMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/RedStoneWireBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/MinecraftServerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireNode with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler with maxs=true frames=true
 [Architectury Transformer DEBUG] Provided 57 classpath jar(s):
@@ -86,7 +82,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\.gradle\loom-cache\remapped_mods\remapped\dev\architectury\architectury-65f153da\9.2.14\architectury-65f153da-9.2.14.jar
-[Architectury Transformer] Read classpath in 2.210 s
+[Architectury Transformer] Read classpath in 2.326 s
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$NodeProvider with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$Directions with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireConnectionManager with maxs=true frames=true
@@ -112,23 +108,23 @@
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/command/AlternateCurrentCommand with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/AlternateCurrentMod with maxs=true frames=true
 [Architectury Transformer DEBUG] Closed File Systems for C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionFabric.jar
-[Architectury Transformer] Transformed jar with 5 transformer(s) in 2.533 s
+[Architectury Transformer] Transformed jar with 5 transformer(s) in 2.736 s
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] Transforming from C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\devlibs\performancetweaks-common-1.0.0-dev.jar to C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionForge.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] Transforming 7 transformer(s) from C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\devlibs\performancetweaks-common-1.0.0-dev.jar to C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionForge.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@d28671d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@446d3b30
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@65d0c437
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@4b051db8
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@6c6d9ce4
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@305936e9
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@9008549
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@12bbdc59
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@66b8d1d3
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@4dd1a23c
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@5cddf14c
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@71ac0d35
 [Architectury Transformer DEBUG] Transforming from C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\devlibs\performancetweaks-common-1.0.0-dev.jar to C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionForge.jar with 7 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000002791f355910@539cc499
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda/0x000001d402083a40@20b815ea
 [Architectury Transformer DEBUG] Provided 57 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.18.4\dc4682125d5db647d6ce80a98b98945835adcd4b\fabric-loader-0.18.4.jar
@@ -187,7 +183,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\sampw\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\.gradle\loom-cache\remapped_mods\remapped\dev\architectury\architectury-65f153da\9.2.14\architectury-65f153da-9.2.14.jar
-[Architectury Transformer] Read classpath in 1.739 s
+[Architectury Transformer] Read classpath in 1.581 s
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
@@ -195,47 +191,43 @@
 [Architectury Transformer DEBUG] Writing org/lightning323/RailOptimization/RailLogic with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/RailOptimization/PoweredRailBlockInvoker with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/Performancetweaks with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/railOptimization/PoweredRailBlockMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/ConnectScreenThreadMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/MultiplayerServerListPingerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/fastIpPing/AddressResolverMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/entityCollisionFix/MixinEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/entityCollisionFix/MixinLivingEntity with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/RedStoneWireBlockMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/MinecraftServerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/mixin/alternateCurrent/ServerLevelMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/FastIpPingMod with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/utils/DummyClass with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/me/fallenbreath/fastipping/impl/InetAddressPatcher with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/config/ConfigManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/performancetweaks/config/ModConfig with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/railOptimization/PoweredRailBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/entityCollisionFix/MixinLivingEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/entityCollisionFix/MixinEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/RedStoneWireBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/ServerLevelMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/mixin/alternateCurrent/MinecraftServerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/AlternateCurrentMod with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/PriorityQueue with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireConnectionManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$NodeProvider with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$4 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/SimpleQueue$SimpleIterator with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireConnection with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/PriorityQueue with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/Node with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/Config with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/LevelHelper with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$Directions with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireConnection with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$NodeProvider with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$3 with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$2 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/Config$Primary with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/SimpleQueue$SimpleIterator with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/SimpleQueue with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/Config$Derived with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireHandler$Directions with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/WireNode with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/Profiler$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/LevelHelper with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/Config$Derived with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/wire/UpdateOrder$4 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/ProfilerResults with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/Profiler with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/ACProfiler with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/Profiler$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/util/profiler/Profiler with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/interfaces/mixin/IServerLevel with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing org/lightning323/alternate/current/command/AlternateCurrentCommand with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /performancetweaks.mixins.json is a mixin config.
 [Architectury Transformer DEBUG] Found mixin config(s): performancetweaks.mixins.json
 [Architectury Transformer DEBUG] Injecting MixinConfigs into /META-INF/MANIFEST.MF
 [Architectury Transformer DEBUG] Closed File Systems for C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0-transformProductionForge.jar
-[Architectury Transformer] Transformed jar with 7 transformer(s) in 2.860 s
+[Architectury Transformer] Transformed jar with 7 transformer(s) in 2.636 s
 [Architectury Transformer DEBUG] Closed File Systems for C:\Local Files\Java\Minecraft Mods\MC-PerformanceTweaks\common\build\libs\performancetweaks-common-1.0.0.jar

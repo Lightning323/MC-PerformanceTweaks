@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.mixin.alternateCurrent;
+package org.lightning323.mixin.alternateCurrent;
 
 import java.util.List;
 import java.util.concurrent.Executor;
