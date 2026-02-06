@@ -1,26 +1,9 @@
-.gradle
-**/build/
-!src/**/build/
+/.gradle/loom-cache
 
-# Ignore Gradle GUI config
-gradle-app.setting
+/fabric/run
+/forge/run
+/common/run
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
-
-# Cache of project
-.gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-/run
-/run/
-/.idea/
-.idea
-.idea/modules/
+/common/build
+/forge/build
+/fabric/build
