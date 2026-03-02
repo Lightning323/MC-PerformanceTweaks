@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "org.lightning323.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+    "alternateCurrent.MinecraftServerMixin",
+    "alternateCurrent.RedStoneWireBlockMixin",
+    "alternateCurrent.ServerLevelMixin",
+    "railOptimization.PoweredRailBlockMixin"
+  ],
+  "client": [
+    "entityCollisionFix.MixinEntity",
+    "entityCollisionFix.MixinLivingEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

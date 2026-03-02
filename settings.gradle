@@ -7,8 +7,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'performancetweaks'
+rootProject.name = 'perf_tweaks'
 
 include 'common'
 include 'fabric'
-include 'forge'
+include 'neoforge'

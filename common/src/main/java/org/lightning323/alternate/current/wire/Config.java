@@ -39,9 +39,7 @@ public interface Config {
 	void save(boolean silent);
 
 	public static class Primary implements Config {
-
 		private final Path path;
-
 		private boolean enabled = ConfigManager.INSTANCE.enableAlternateCurrentByDefault;
 		private UpdateOrder updateOrder = UpdateOrder.HORIZONTAL_FIRST_OUTWARD;
 

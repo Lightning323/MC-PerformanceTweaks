@@ -8,3 +8,4 @@
 /forge/build
 /fabric/build
 *.lock
+/neoforge/run
