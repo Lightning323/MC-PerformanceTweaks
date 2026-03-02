@@ -3,9 +3,10 @@
 /fabric/run
 /forge/run
 /common/run
+/neoforge/run
 
 /common/build
 /forge/build
 /fabric/build
 *.lock
-/neoforge/run
+
