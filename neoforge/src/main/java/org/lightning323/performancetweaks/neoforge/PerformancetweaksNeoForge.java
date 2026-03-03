@@ -11,14 +11,17 @@ import static net.neoforged.fml.loading.FMLPaths.CONFIGDIR;
 
 @Mod(Performancetweaks.MOD_ID)
 public final class PerformancetweaksNeoForge {
+
+    static{
+        ConfigManager.init(CONFIGDIR.get().toFile());
+    }
+
     public PerformancetweaksNeoForge() {
         //Register event bus with neoforge
         NeoForge.EVENT_BUS.register(this);
 
         // Run our common setup.
         Performancetweaks.init();
-
-        ConfigManager.init(CONFIGDIR.get().toFile(), Performancetweaks.MOD_ID);
     }
 
     @SubscribeEvent

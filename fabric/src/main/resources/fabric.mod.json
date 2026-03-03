@@ -23,6 +23,7 @@
   "mixins": [
     "perf_tweaks.mixins.json"
   ],
+  "accessWidener" : "perf_tweaks.accesswidener",
   "depends": {
     "fabricloader": ">=0.18.4",
     "minecraft": "~1.21.1",

@@ -8,6 +8,8 @@ architectury {
     minecraft = project.minecraft_version
 }
 
+
+
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
@@ -17,6 +19,11 @@ subprojects {
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
+
+
+    loom {
+        accessWidenerPath = file('src/main/resources/perf_tweaks.accesswidener')
+    }
 
     base {
         // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.

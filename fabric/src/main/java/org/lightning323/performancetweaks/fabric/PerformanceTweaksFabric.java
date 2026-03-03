@@ -6,6 +6,11 @@ import org.lightning323.performancetweaks.Performancetweaks;
 import org.lightning323.performancetweaks.config.ConfigManager;
 
 public final class PerformanceTweaksFabric implements ModInitializer {
+
+    static{
+        ConfigManager.init(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().toFile());
+    }
+
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -19,8 +24,5 @@ public final class PerformanceTweaksFabric implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             Performancetweaks.onRegisterCommands(dispatcher);
         });
-
-        // FabricLoader provides the standard config directory
-        ConfigManager.init(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().toFile(), Performancetweaks.MOD_ID);
     }
 }
