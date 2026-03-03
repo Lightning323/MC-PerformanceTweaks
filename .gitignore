@@ -1,5 +1,6 @@
 /.gradle/loom-cache
-
+/.gradle
+/.idea
 /fabric/run
 /forge/run
 /common/run
