@@ -3,12 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/performancetweaks.common.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/performancetweaks.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/performancetweaks.fabric.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/performancetweaks.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/performancetweaks.fabric.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/performancetweaks.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/performancetweaks.forge.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/performancetweaks.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/performancetweaks.forge.test.iml" />
     </modules>
   </component>
 </project>
