@@ -12,14 +12,17 @@ import org.lightning323.performancetweaks.config.ConfigManager;
 
 @Mod(Performancetweaks.MOD_ID)
 public final class PerformancetweaksForge {
+
+    static{
+        ConfigManager.init(net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().toFile());
+    }
+
     public PerformancetweaksForge() {
         // Submit our event bus to let Architectury API register our content on the right time.
         EventBuses.registerModEventBus(Performancetweaks.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
         // Run our common setup.
         Performancetweaks.init();
-
-        ConfigManager.init(net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().toFile(), Performancetweaks.MOD_ID);
     }
 
     @SubscribeEvent

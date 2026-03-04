@@ -7,7 +7,9 @@
     "alternateCurrent.MinecraftServerMixin",
     "alternateCurrent.RedStoneWireBlockMixin",
     "alternateCurrent.ServerLevelMixin",
-    "railOptimization.PoweredRailBlockMixin"
+    "railOptimization.PoweredRailBlockMixin",
+    "letMeDespawn.LivingEntityMixin",
+    "letMeDespawn.MobMixin"
   ],
   "client": [
     "entityCollisionFix.MixinEntity",

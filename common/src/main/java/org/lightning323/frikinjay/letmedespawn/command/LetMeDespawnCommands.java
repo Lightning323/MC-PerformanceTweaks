@@ -1,6 +1,6 @@
-package com.frikinjay.letmedespawn.command;
+package org.lightning323.frikinjay.letmedespawn.command;
 
-import com.frikinjay.letmedespawn.LetMeDespawn;
+import org.lightning323.frikinjay.letmedespawn.LetMeDespawn;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;

@@ -1,4 +1,4 @@
-package com.frikinjay.almanac;
+package org.lightning323.frikinjay.almanac;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

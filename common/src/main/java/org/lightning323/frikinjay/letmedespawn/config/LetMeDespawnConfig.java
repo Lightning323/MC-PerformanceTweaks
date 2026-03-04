@@ -1,7 +1,7 @@
-package com.frikinjay.letmedespawn.config;
+package org.lightning323.frikinjay.letmedespawn.config;
 
-import com.frikinjay.almanac.Almanac;
-import com.frikinjay.letmedespawn.LetMeDespawn;
+import org.lightning323.frikinjay.almanac.Almanac;
+import org.lightning323.frikinjay.letmedespawn.LetMeDespawn;
 
 import java.util.HashSet;
 import java.util.List;

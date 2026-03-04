@@ -7,5 +7,7 @@
 /common/build
 /forge/build
 /fabric/build
+/neoforge/build
 *.lock
-
+/.idea
+/.gradle

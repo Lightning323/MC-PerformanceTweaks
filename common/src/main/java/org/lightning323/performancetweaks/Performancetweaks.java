@@ -5,6 +5,7 @@ import net.minecraft.commands.CommandSourceStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lightning323.alternate.current.command.AlternateCurrentCommand;
+import org.lightning323.frikinjay.letmedespawn.LetMeDespawn;
 
 public final class Performancetweaks {
     public static final String MOD_ID = "perf_tweaks";
@@ -13,6 +14,7 @@ public final class Performancetweaks {
     //common init code
     public static void init() {
         LOGGER.info("Performance Tweaks initialized");
+        LetMeDespawn.init();
     }
 
     //common command registration

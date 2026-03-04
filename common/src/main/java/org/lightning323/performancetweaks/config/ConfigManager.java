@@ -2,6 +2,8 @@ package org.lightning323.performancetweaks.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.lightning323.performancetweaks.Performancetweaks;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -12,8 +14,12 @@ public class ConfigManager {
     private static File configFile;
     public static ModConfig INSTANCE;
 
-    public static void init(File path, String modId) {
-        configFile = new File(path, modId + ".json");
+    public static void init(File path) {
+        File configDir = new File(path, Performancetweaks.MOD_ID);
+        if (configDir.mkdirs()) {
+            Performancetweaks.LOGGER.info("Created config directory: " + configDir.getAbsolutePath());
+        }
+        configFile = new File(configDir, Performancetweaks.MOD_ID + ".json");
         load();
     }
 
