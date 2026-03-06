@@ -11,3 +11,7 @@
 /fabric/build
 *.lock
 
+/common/.gradle
+/fabric/.gradle
+/forge/.gradle
+/neoforge/.gradle
