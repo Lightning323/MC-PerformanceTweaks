@@ -5,19 +5,20 @@
   "name": "Performance Tweaks",
   "description": "",
   "authors": [
-    "Lightning323"
+    ""
   ],
   "contact": {
     "homepage": ""
   },
-  "license": "MIT",
+  "license": "All-Rights-Reserved",
+  "icon": "assets/perf_tweaks/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.lightning323.performancetweaks.fabric.PerformanceTweaksFabric"
+      "org.zipCoder.perf_tweaks.fabric.Perf_tweaksFabric"
     ],
     "client": [
-      "org.lightning323.performancetweaks.fabric.client.perftweaksFabricClient"
+      "org.zipCoder.perf_tweaks.fabric.client.Perf_tweaksFabricClient"
     ]
   },
   "mixins": [
@@ -26,9 +27,9 @@
   "accessWidener" : "perf_tweaks.accesswidener",
   "depends": {
     "fabricloader": ">=0.18.4",
-    "minecraft": "~1.21.1",
+    "minecraft": "~1.21.2",
     "java": ">=21",
-    "architectury": ">=13.0.8",
+    "architectury": ">=14.0.4",
     "fabric-api": "*"
   },
   "suggests": {
