@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.zipCoder.perf_tweaks.fabric.Perf_tweaksFabric"
+      "org.lightning323.perf_tweaks.fabric.Perf_tweaksFabric"
     ],
     "client": [
       "org.lightning323.perf_tweaks.fabric.client.Perf_tweaksFabricClient"
