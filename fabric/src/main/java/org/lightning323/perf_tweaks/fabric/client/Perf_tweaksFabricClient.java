@@ -1,4 +1,4 @@
-package org.zipCoder.perf_tweaks.fabric.client;
+package org.lightning323.perf_tweaks.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks;
+package org.lightning323.perf_tweaks;
 
 import org.lightning323.frikinjay.letmedespawn.LetMeDespawn;
 import com.mojang.brigadier.CommandDispatcher;
@@ -9,7 +9,7 @@ import org.lightning323.alternate.current.command.AlternateCurrentCommand;
 
 import java.io.File;
 
-public final class Performancetweaks {
+public final class Perf_tweaks {
     public static final String MOD_ID = "perf_tweaks";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 

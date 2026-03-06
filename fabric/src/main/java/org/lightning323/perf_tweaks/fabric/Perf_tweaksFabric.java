@@ -1,9 +1,11 @@
-package org.zipCoder.perf_tweaks.fabric;
+package org.lightning323.perf_tweaks.fabric;
 
-import org.zipCoder.perf_tweaks.Perf_tweaks;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import org.lightning323.perf_tweaks.Perf_tweaks;
 import net.fabricmc.api.ModInitializer;
+import org.lightning323.perf_tweaks.config.ConfigManager;
 
-public final class PerformanceTweaksFabric implements ModInitializer {
+public final class Perf_tweaksFabric implements ModInitializer {
 
     static{
         ConfigManager.init(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().toFile());
@@ -16,11 +18,11 @@ public final class PerformanceTweaksFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        Performancetweaks.init();
+        Perf_tweaks.init();
 
         //Command registration
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            Performancetweaks.onRegisterCommands(dispatcher);
+            Perf_tweaks.onRegisterCommands(dispatcher);
         });
     }
 }

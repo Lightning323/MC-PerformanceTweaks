@@ -1,5 +1,6 @@
 package org.lightning323.mixin.letMeDespawn;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -39,8 +40,9 @@ public abstract class MobMixin extends LivingEntity {
             )
     )
     private void letmedespawn$yeetusCheckus(Mob instance) {
-        if (Almanac.pickedItems) {
-            MobMixinUtils.dropEquipmentOnDiscard(instance);
+        Mob entity = (Mob) (Object) this;
+        if(entity.level() instanceof ServerLevel server && Almanac.pickedItems) {
+            MobMixinUtils.dropEquipmentOnDiscard(server, instance);
         }
         this.discard();
     }

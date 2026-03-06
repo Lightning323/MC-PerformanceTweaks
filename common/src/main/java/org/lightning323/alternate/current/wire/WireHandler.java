@@ -17,9 +17,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-
 import net.minecraft.world.level.redstone.InstantNeighborUpdater;
 import net.minecraft.world.level.redstone.NeighborUpdater;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.level.redstone.Redstone;
 import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
 
@@ -162,24 +162,15 @@ public class WireHandler {
 			return iDir ^ (0b10 >>> (iDir >>> 2));
 		}
 
-		// Each array is placed at the index that encodes the direction that is missing
-		// from the array.
-		private static final int[][] I_EXCEPT = {
-			{       NORTH, EAST, SOUTH, DOWN, UP },
-			{ WEST,        EAST, SOUTH, DOWN, UP },
-			{ WEST, NORTH,       SOUTH, DOWN, UP },
-			{ WEST, NORTH, EAST,        DOWN, UP },
-			{ WEST, NORTH, EAST, SOUTH,       UP },
-			{ WEST, NORTH, EAST, SOUTH, DOWN     }
-		};
-		private static final int[][] I_EXCEPT_CARDINAL = {
-			{       NORTH, EAST, SOUTH },
-			{ WEST,        EAST, SOUTH },
-			{ WEST, NORTH,       SOUTH },
-			{ WEST, NORTH, EAST,       },
-			{ WEST, NORTH, EAST, SOUTH },
-			{ WEST, NORTH, EAST, SOUTH }
-		};
+		public static int index(Direction dir) {
+			for (int i = 0; i < ALL.length; i++) {
+				if (dir == ALL[i]) {
+					return i;
+				}
+			}
+
+			return -1;
+		}
 	}
 
 	/**
@@ -286,16 +277,22 @@ public class WireHandler {
 		return config;
 	}
 
+	private Node getOrAddNode(BlockPos pos) {
+		// just pass in null, then the state will only be retrieved
+		// if there is no node as this position yet
+		return getOrAddNode(pos, null);
+	}
+
 	/**
 	 * Retrieve the {@link Node Node} that represents the
 	 * block at the given position in the level.
 	 */
-	private Node getOrAddNode(BlockPos pos) {
+	private Node getOrAddNode(BlockPos pos, BlockState state) {
 		return nodes.compute(pos.asLong(), (key, node) -> {
 			if (node == null) {
 				// If there is not yet a node at this position, retrieve and
 				// update one from the cache.
-				return getNextNode(pos);
+				return getNextNode(pos, state != null ? state : level.getBlockState(pos));
 			}
 			if (node.invalid) {
 				return revalidateNode(node);
@@ -311,14 +308,6 @@ public class WireHandler {
 	 */
 	private Node removeNode(BlockPos pos) {
 		return nodes.remove(pos.asLong());
-	}
-
-	/**
-	 * Return a {@link Node Node} that represents the block
-	 * at the given position.
-	 */
-	private Node getNextNode(BlockPos pos) {
-		return getNextNode(pos, level.getBlockState(pos));
 	}
 
 	/**
@@ -367,6 +356,10 @@ public class WireHandler {
 	 * Otherwise, the node can be quickly revalidated with the new block state.
 	 */
 	private Node revalidateNode(Node node) {
+		if (!node.invalid) {
+			return node;
+		}
+
 		BlockPos pos = node.pos;
 		BlockState state = level.getBlockState(pos);
 
@@ -423,21 +416,28 @@ public class WireHandler {
 	/**
 	 * This method should be called whenever a wire receives a block update.
 	 */
-	public boolean onWireUpdated(BlockPos pos) {
-		Node node = getOrAddNode(pos);
+	public boolean onWireUpdated(BlockPos pos, BlockState state, Orientation orientation) {
+		Node node = getOrAddNode(pos, state);
+
+		if (!node.isWire()) {
+			return false; // we should never get here
+		}
+
+		WireNode wire = node.asWire();
 
 		invalidate();
-		findRoots(pos);
+		revalidateNode(wire);
+		findRoots(wire, orientation);
 		tryUpdate();
 
-		return node.isWire();
+		return true;
 	}
 
 	/**
 	 * This method should be called whenever a wire is placed.
 	 */
-	public void onWireAdded(BlockPos pos) {
-		Node node = getOrAddNode(pos);
+	public void onWireAdded(BlockPos pos, BlockState state) {
+		Node node = getOrAddNode(pos, state);
 
 		if (!node.isWire()) {
 			return; // we should never get here
@@ -527,15 +527,19 @@ public class WireHandler {
 	 * from multiple points at once, checking for common cases like the one
 	 * described above is relatively straight-forward.
 	 */
-	private void findRoots(BlockPos pos) {
-		Node node = getOrAddNode(pos);
+	private void findRoots(WireNode wire, Orientation orientation) {
+		// horizontal direction bias for update order purposes
+		int iDirBias = -1;
 
-		if (!node.isWire()) {
-			return; // we should never get here
+		if (orientation != null) {
+			Direction dir = orientation.getFront().getAxis().isHorizontal()
+				? orientation.getFront()
+				: orientation.getUp();
+
+			iDirBias = Directions.index(dir);
 		}
 
-		WireNode wire = node.asWire();
-		findRoot(wire);
+		findRoot(wire, iDirBias);
 
 		// If the wire at the given position is not in an invalid state
 		// we can exit early.
@@ -543,33 +547,43 @@ public class WireHandler {
 			return;
 		}
 
-		for (int iDir : config.getUpdateOrder().directNeighbors(wire.iFlowDir)) {
-			Node neighbor = getNeighbor(wire, iDir);
-
-			if (neighbor.isConductor() || neighbor.isSignalSource()) {
-				findRootsAround(neighbor, Directions.iOpposite(iDir));
+		if (orientation == null) {
+			// no neighborChanged orientation present, look around in all sides
+			for (int iDir : config.getUpdateOrder().directNeighbors(wire.iFlowDir)) {
+				findRootsAround(wire, iDir);
 			}
+		} else {
+			// use the orientation from the neighborChanged update to look for roots only behind
+			findRootsAround(wire, Directions.index(orientation.getFront().getOpposite()));
 		}
 	}
 
 	/**
-	 * Look for wires around the given node that require power changes.
+	 * Look for wires around a neighbor of the given wire that require power changes.
 	 */
-	private void findRootsAround(Node node, int except) {
-		for (int iDir : Directions.I_EXCEPT_CARDINAL[except]) {
-			Node neighbor = getNeighbor(node, iDir);
+	private void findRootsAround(WireNode wire, int iDir) {
+		Node node = getNeighbor(wire, iDir);
 
-			if (neighbor.isWire()) {
-				findRoot(neighbor.asWire());
+		if (node.isConductor() || node.isSignalSource()) {
+			for (int iSide : config.getUpdateOrder().cardinalNeighbors(wire.iFlowDir)) {
+				Node neighbor = getNeighbor(node, iSide);
+
+				if (neighbor.isWire()) {
+					findRoot(neighbor.asWire(), iSide);
+				}
 			}
 		}
+	}
+
+	private void findRoot(WireNode wire) {
+		findRoot(wire, -1);
 	}
 
 	/**
 	 * Check if the given wire requires power changes. If it does, queue it for the
 	 * breadth-first search as a root.
 	 */
-	private void findRoot(WireNode wire) {
+	private void findRoot(WireNode wire, int iDiscoveryDir) {
 		// Each wire only needs to be checked once.
 		if (wire.discovered) {
 			return;
@@ -580,7 +594,7 @@ public class WireHandler {
 		findPower(wire, false);
 
 		if (needsUpdate(wire)) {
-			searchRoot(wire);
+			searchRoot(wire, iDiscoveryDir);
 		}
 	}
 
@@ -696,7 +710,7 @@ public class WireHandler {
 			// Since 1.16 there is a block that is both a conductor and a signal
 			// source: the target block!
 			if (neighbor.isConductor()) {
-				power = Math.max(power, getDirectSignalTo(wire, neighbor, Directions.iOpposite(iDir)));
+				power = Math.max(power, getDirectSignalTo(wire, neighbor));
 			}
 			if (neighbor.isSignalSource()) {
 				power = Math.max(power, neighbor.state.getSignal(level, neighbor.pos, Directions.ALL[iDir]));
@@ -714,10 +728,10 @@ public class WireHandler {
 	 * Determine the direct signal the given wire receives from neighboring blocks
 	 * through the given conductor node.
 	 */
-	private int getDirectSignalTo(WireNode wire, Node node, int except) {
+	private int getDirectSignalTo(WireNode wire, Node node) {
 		int power = POWER_MIN;
 
-		for (int iDir : Directions.I_EXCEPT[except]) {
+		for (int iDir = 0; iDir < Directions.ALL.length; iDir++) {
 			Node neighbor = getNeighbor(node, iDir);
 
 			if (neighbor.isSignalSource()) {
@@ -742,13 +756,13 @@ public class WireHandler {
 	/**
 	 * Queue the given wire for the breadth-first search as a root.
 	 */
-	private void searchRoot(WireNode wire) {
-		int iBackupFlowDir;
-
-		if (wire.connections.iFlowDir < 0) {
-			iBackupFlowDir = 0;
-		} else {
+	private void searchRoot(WireNode wire, int iBackupFlowDir) {
+		if (wire.connections.iFlowDir >= 0) {
+			// power flow direction takes precedent
 			iBackupFlowDir = wire.connections.iFlowDir;
+		} else if (iBackupFlowDir < 0) {
+			// use default value if none is given
+			iBackupFlowDir = 0;
 		}
 
 		search(wire, true, iBackupFlowDir);
@@ -1064,7 +1078,9 @@ public class WireHandler {
 	 * Emit a block update to the given node.
 	 */
 	private void updateBlock(Node node, BlockPos neighborPos, Block neighborBlock) {
-		neighborUpdater.neighborChanged(node.pos, neighborBlock, neighborPos);
+		// redstone wire is the only block that uses the neighborChanged orientation
+		// so leaving it as null should not be an issue
+		neighborUpdater.neighborChanged(node.pos, neighborBlock, null);
 	}
 
 	@FunctionalInterface

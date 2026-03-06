@@ -18,7 +18,7 @@
       "org.zipCoder.perf_tweaks.fabric.Perf_tweaksFabric"
     ],
     "client": [
-      "org.zipCoder.perf_tweaks.fabric.client.Perf_tweaksFabricClient"
+      "org.lightning323.perf_tweaks.fabric.client.Perf_tweaksFabricClient"
     ]
   },
   "mixins": [

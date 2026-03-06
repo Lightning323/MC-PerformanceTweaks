@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.config;
+package org.lightning323.perf_tweaks.config;
 
 import com.google.gson.annotations.SerializedName;
 

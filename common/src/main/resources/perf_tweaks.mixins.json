@@ -7,6 +7,7 @@
     "alternateCurrent.MinecraftServerMixin",
     "alternateCurrent.RedStoneWireBlockMixin",
     "alternateCurrent.ServerLevelMixin",
+    "alternateCurrent.ExperimentalRedstoneUtilsMixin",
     "railOptimization.PoweredRailBlockMixin",
     "letMeDespawn.MobMixin",
     "letMeDespawn.LivingEntityMixin"

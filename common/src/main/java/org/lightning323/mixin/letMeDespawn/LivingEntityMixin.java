@@ -1,5 +1,6 @@
 package org.lightning323.mixin.letMeDespawn;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import org.lightning323.frikinjay.almanac.Almanac;
@@ -22,7 +23,7 @@ public abstract class LivingEntityMixin {
             // check if they picked  up items
             if (Almanac.pickedItems) {
                 // drop equiptment items
-                MobMixinUtils.dropEquipmentOnPickup(entity);
+                MobMixinUtils.dropEquipmentOnPickup((ServerLevel) entity.level(), entity);
             }
         }
     }

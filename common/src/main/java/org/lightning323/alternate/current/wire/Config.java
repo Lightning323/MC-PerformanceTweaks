@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
-import org.lightning323.performancetweaks.config.ConfigManager;
+import org.lightning323.perf_tweaks.config.ConfigManager;
 
 public interface Config {
 
@@ -39,7 +39,9 @@ public interface Config {
 	void save(boolean silent);
 
 	public static class Primary implements Config {
+
 		private final Path path;
+
 		private boolean enabled = ConfigManager.INSTANCE.enableAlternateCurrentByDefault;
 		private UpdateOrder updateOrder = UpdateOrder.HORIZONTAL_FIRST_OUTWARD;
 

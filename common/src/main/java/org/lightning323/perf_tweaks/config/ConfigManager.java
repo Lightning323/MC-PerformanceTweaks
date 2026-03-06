@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.config;
+package org.lightning323.perf_tweaks.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.lightning323.performancetweaks.Performancetweaks.*;
+import static org.lightning323.perf_tweaks.Perf_tweaks.*;
 
 public class ConfigManager {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
