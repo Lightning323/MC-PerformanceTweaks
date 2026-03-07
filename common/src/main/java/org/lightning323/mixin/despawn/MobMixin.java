@@ -1,11 +1,11 @@
-package org.lightning323.mixin.letMeDespawn;
+package org.lightning323.mixin.despawn;
 
-import org.lightning323.frikinjay.almanac.Almanac;
-import org.lightning323.frikinjay.letmedespawn.LetMeDespawn;
-import org.lightning323.frikinjay.letmedespawn.MobMixinUtils;
+import org.lightning323.despawn.Despawn;
+import org.lightning323.despawn.MobMixinUtils;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.lightning323.performancetweaks.config.ConfigManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,8 +24,10 @@ public abstract class MobMixin extends LivingEntity {
             method = {"setItemSlotAndDropWhenKilled"}
     )
     private void letmedespawn$setItemSlotAndDropWhenKilled(EquipmentSlot slot, ItemStack stack, CallbackInfo info) {
-        Mob entity = (Mob) (Object) this;
-        LetMeDespawn.setPersistence(entity, slot);
+        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+            Mob entity = (Mob) (Object) this;
+            Despawn.setPersistence(entity, slot);
+        }
     }
 
     @Redirect(
@@ -36,9 +38,11 @@ public abstract class MobMixin extends LivingEntity {
             )
     )
     private void letmedespawn$yeetusCheckus(Mob instance) {
-        if (Almanac.pickedItems) {
-            MobMixinUtils.dropEquipmentOnDiscard(instance);
+        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+            if (ConfigManager.INSTANCE.letMeDespawn_dropTools) {
+                MobMixinUtils.dropEquipmentOnDiscard(instance);
+            }
+            this.discard();
         }
-        this.discard();
     }
 }

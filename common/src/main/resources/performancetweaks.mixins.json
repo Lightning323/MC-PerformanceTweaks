@@ -8,8 +8,8 @@
     "alternateCurrent.RedStoneWireBlockMixin",
     "alternateCurrent.ServerLevelMixin",
     "railOptimization.PoweredRailBlockMixin",
-    "letMeDespawn.LivingEntityMixin",
-    "letMeDespawn.MobMixin"
+    "despawn.LivingEntityMixin",
+    "despawn.MobMixin"
   ],
   "client": [
     "entityCollisionFix.MixinEntity",

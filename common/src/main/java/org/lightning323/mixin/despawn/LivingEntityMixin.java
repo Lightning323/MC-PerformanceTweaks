@@ -1,9 +1,9 @@
-package org.lightning323.mixin.letMeDespawn;
+package org.lightning323.mixin.despawn;
 
-import org.lightning323.frikinjay.almanac.Almanac;
-import org.lightning323.frikinjay.letmedespawn.MobMixinUtils;
+import org.lightning323.despawn.MobMixinUtils;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import org.lightning323.performancetweaks.config.ConfigManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,11 +18,13 @@ public abstract class LivingEntityMixin {
             at = @At("HEAD")
     )
     private void letmedespawn$onRemove(CallbackInfo info) {
-        if ((Object) this instanceof Mob entity) {
-            // check if they picked  up items
-            if (Almanac.pickedItems) {
-                // drop equiptment items
-                MobMixinUtils.dropEquipmentOnPickup(entity);
+        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+            if ((Object) this instanceof Mob entity) {
+                // check if they picked  up items
+                if (ConfigManager.INSTANCE.letMeDespawn_dropTools) {
+                    // drop equiptment items
+                    MobMixinUtils.dropEquipmentOnPickup(entity);
+                }
             }
         }
     }
