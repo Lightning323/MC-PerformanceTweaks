@@ -8,9 +8,7 @@ import org.lightning323.performancetweaks.config.ConfigManager;
 
 public final class PerformancetweaksFabric implements ModInitializer {
 
-    static{
-        ConfigManager.init(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().toFile());
-    }
+
 
     @Override
     public void onInitialize() {
@@ -19,7 +17,7 @@ public final class PerformancetweaksFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        Performancetweaks.init();
+        Performancetweaks.init(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().toFile());
 
         //Command registration
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

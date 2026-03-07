@@ -1,4 +1,4 @@
-package org.lightning323.frikinjay.letmedespawn;
+package org.lightning323.despawn;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -23,7 +23,6 @@ public class MobMixinUtils {
     // ported from almanac
     public static void dropEquipmentOnDiscard(Mob entity) {
         for (EquipmentSlot equipmentSlot : EquipmentSlot.values()) {
-
             ItemStack itemStack = entity.getItemBySlot(equipmentSlot);
             if (!itemStack.isEmpty()) {
                 entity.spawnAtLocation(itemStack);
