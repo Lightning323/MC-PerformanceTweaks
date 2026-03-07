@@ -1,6 +1,9 @@
 /.gradle/loom-cache
 
 /fabric/run
+/fabric/.gradle
+/forge/.gradle
+/common/.gradle
 /forge/run
 /common/run
 /neoforge/run
