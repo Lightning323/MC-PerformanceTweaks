@@ -1,4 +1,4 @@
-package org.lightning323.performancetweaks.optimizations.common.rail;
+package org.lightning323.performancetweaks.optimizations.server.rail;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;

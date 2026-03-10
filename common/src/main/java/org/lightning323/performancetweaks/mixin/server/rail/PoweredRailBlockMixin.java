@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.lightning323.performancetweaks.optimizations.common.rail.PoweredRailBlockInvoker;
-import static org.lightning323.performancetweaks.optimizations.common.rail.RailLogic.customUpdateState;
+import org.lightning323.performancetweaks.optimizations.server.rail.PoweredRailBlockInvoker;
+import static org.lightning323.performancetweaks.optimizations.server.rail.RailLogic.customUpdateState;
 
 @Mixin(value = PoweredRailBlock.class, priority = 990)
 public abstract class PoweredRailBlockMixin implements PoweredRailBlockInvoker {
