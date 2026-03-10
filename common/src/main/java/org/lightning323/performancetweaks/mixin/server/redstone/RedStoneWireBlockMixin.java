@@ -1,0 +1,75 @@
+package org.lightning323.performancetweaks.mixin.server.redstone;
+
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import org.lightning323.performancetweaks.optimizations.server.redstone.AlternateCurrentMod;
+import org.lightning323.performancetweaks.optimizations.server.redstone.interfaces.mixin.IServerLevel;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RedStoneWireBlock;
+import net.minecraft.world.level.block.state.BlockState;
+
+@Mixin(RedStoneWireBlock.class)
+public class RedStoneWireBlockMixin {
+
+	@Inject(
+		method = "updatePowerStrength",
+		cancellable = true,
+		at = @At(
+			value = "HEAD"
+		)
+	)
+	private void alternate_current$onUpdate(Level level, BlockPos pos, BlockState state, CallbackInfo ci) {
+		if (AlternateCurrentMod.on) {
+			// Using redirects for calls to this method makes conflicts with
+			// other mods more likely, so we inject-cancel instead.
+			ci.cancel();
+		}
+	}
+
+	@Inject(
+		method = "onPlace",
+		at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/world/level/block/RedStoneWireBlock;updatePowerStrength(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"
+		)
+	)
+	private void alternate_current$onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston, CallbackInfo ci) {
+		if (AlternateCurrentMod.on) {
+			((IServerLevel)level).alternate_current$getWireHandler().onWireAdded(pos);
+		}
+	}
+
+	@Inject(
+		method = "onRemove",
+		at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/world/level/block/RedStoneWireBlock;updatePowerStrength(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V"
+		)
+	)
+	private void alternate_current$onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston, CallbackInfo ci) {
+		if (AlternateCurrentMod.on) {
+			((IServerLevel)level).alternate_current$getWireHandler().onWireRemoved(pos, state);
+		}
+	}
+
+	@Inject(
+		method = "neighborChanged",
+		cancellable = true,
+		at = @At(
+			value = "HEAD"
+		)
+	)
+	private void alternate_current$onNeighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston, CallbackInfo ci) {
+		if (AlternateCurrentMod.on) {
+			if (((IServerLevel)level).alternate_current$getWireHandler().onWireUpdated(pos)) {
+				ci.cancel(); // needed to fix duplication bugs
+			}
+		}
+	}
+}

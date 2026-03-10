@@ -7,13 +7,16 @@ import java.util.List;
 import java.util.Set;
 
 public class PerfTweaksConfig {
-    @SerializedName("enable_alternate_current_by_default")
+    /**
+     * Alternate current config
+     */
+    @SerializedName("redstone.enabled_by_default")
     public boolean enableAlternateCurrentByDefault = true;
 
     /**
      * Despawn config
      */
-    @SerializedName("despawning.enable_despawning_optimization")
+    @SerializedName("despawning.enabled")
     public boolean enableLetMeDespawn = true;
 
     @SerializedName("despawning.mobs_drop_tools")
