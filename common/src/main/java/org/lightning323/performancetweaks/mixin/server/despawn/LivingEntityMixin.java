@@ -18,7 +18,7 @@ public abstract class LivingEntityMixin {
             at = @At("HEAD")
     )
     private void letmedespawn$onRemove(CallbackInfo info) {
-        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+        if (ConfigManager.INSTANCE.enableDespawningOptimization) {
             if ((Object) this instanceof Mob entity) {
                 // check if they picked  up items
                 if (ConfigManager.INSTANCE.letMeDespawn_dropTools) {

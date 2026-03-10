@@ -4,8 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lightning323.performancetweaks.optimizations.server.redstone.command.AlternateCurrentCommand;
-import org.lightning323.performancetweaks.optimizations.server.despawn.DespawnCommandUtils;
+import org.lightning323.performancetweaks.optimizations.server.redstone.command.RedstoneCommandUtils;
 import org.lightning323.performancetweaks.config.ConfigManager;
 
 import java.io.File;
@@ -22,7 +21,6 @@ public final class Performancetweaks {
 
     //common command registration
     public static void onRegisterCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
-        AlternateCurrentCommand.register(dispatcher);
         ModCommands.register(dispatcher);
     }
 }

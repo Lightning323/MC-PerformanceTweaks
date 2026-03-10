@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class PerfTweaksConfig {
     /**
-     * Alternate current config
+     * redstone config
      */
     @SerializedName("redstone.enabled_by_default")
     public boolean enableAlternateCurrentByDefault = true;
@@ -17,7 +17,7 @@ public class PerfTweaksConfig {
      * Despawn config
      */
     @SerializedName("despawning.enabled")
-    public boolean enableLetMeDespawn = true;
+    public boolean enableDespawningOptimization = true;
 
     @SerializedName("despawning.mobs_drop_tools")
     public boolean letMeDespawn_dropTools = false;

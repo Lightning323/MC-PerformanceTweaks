@@ -7,11 +7,11 @@ import java.util.Map.Entry;
 
 import org.apache.logging.log4j.Logger;
 
-import org.lightning323.performancetweaks.optimizations.server.redstone.AlternateCurrentMod;
+import org.lightning323.performancetweaks.optimizations.server.redstone.RedstoneOptimization;
 
 public class ProfilerResults {
 	
-	private static final Logger LOGGER = AlternateCurrentMod.LOGGER;
+	private static final Logger LOGGER = RedstoneOptimization.LOGGER;
 	
 	private static final Map<String, Long> RESULTS = new LinkedHashMap<>();
 	private static long totalTime;
@@ -35,7 +35,7 @@ public class ProfilerResults {
 	
 	public static void log() {
 		LOGGER.info("------------------------------------------------------");
-		LOGGER.info("..... "+AlternateCurrentMod.MOD_NAME+" Profiler Session Results .....");
+		LOGGER.info("..... "+ RedstoneOptimization.MOD_NAME+" Profiler Session Results .....");
 		
 		LOGGER.info("total: " + totalTime);
 		

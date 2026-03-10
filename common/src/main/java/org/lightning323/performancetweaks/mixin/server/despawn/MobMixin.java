@@ -24,7 +24,7 @@ public abstract class MobMixin extends LivingEntity {
             method = {"setItemSlotAndDropWhenKilled"}
     )
     private void letmedespawn$setItemSlotAndDropWhenKilled(EquipmentSlot slot, ItemStack stack, CallbackInfo info) {
-        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+        if (ConfigManager.INSTANCE.enableDespawningOptimization) {
             Mob entity = (Mob) (Object) this;
             Despawn.setPersistence(entity, slot);
         }
@@ -38,7 +38,7 @@ public abstract class MobMixin extends LivingEntity {
             )
     )
     private void letmedespawn$yeetusCheckus(Mob instance) {
-        if (ConfigManager.INSTANCE.enableLetMeDespawn) {
+        if (ConfigManager.INSTANCE.enableDespawningOptimization) {
             if (ConfigManager.INSTANCE.letMeDespawn_dropTools) {
                 MobMixinUtils.dropEquipmentOnDiscard(instance);
             }

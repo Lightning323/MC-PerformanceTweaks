@@ -6,11 +6,11 @@ import java.util.Stack;
 
 import org.apache.logging.log4j.Logger;
 
-import org.lightning323.performancetweaks.optimizations.server.redstone.AlternateCurrentMod;
+import org.lightning323.performancetweaks.optimizations.server.redstone.RedstoneOptimization;
 
 public class ACProfiler implements Profiler {
 	
-	private static final Logger LOGGER = AlternateCurrentMod.LOGGER;
+	private static final Logger LOGGER = RedstoneOptimization.LOGGER;
 	
 	private final Stack<Integer> indexStack;
 	private final List<String> locations;

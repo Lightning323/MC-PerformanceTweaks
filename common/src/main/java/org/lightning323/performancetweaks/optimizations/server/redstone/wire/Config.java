@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
-import org.lightning323.performancetweaks.optimizations.server.redstone.AlternateCurrentMod;
+import org.lightning323.performancetweaks.optimizations.server.redstone.RedstoneOptimization;
 import org.lightning323.performancetweaks.optimizations.server.redstone.interfaces.mixin.IServerLevel;
 
 import net.minecraft.server.level.ServerLevel;
@@ -48,6 +48,7 @@ public interface Config {
 		private boolean modified;
 
 		public Primary(LevelStorageAccess storage) {
+			//This config exists within the world itself
 			this.path = storage.getLevelPath(LevelResource.ROOT).resolve("alternate-current.conf");
 		}
 
@@ -59,7 +60,7 @@ public interface Config {
 		@Override
 		public void setEnabled(boolean enabled) {
 			this.enabled = enabled;
-			AlternateCurrentMod.on = enabled;
+			RedstoneOptimization.on = enabled;
 			this.modified = true;
 		}
 
@@ -97,10 +98,10 @@ public interface Config {
 										setUpdateOrder(UpdateOrder.byId(value));
 										break;
 									default:
-										AlternateCurrentMod.LOGGER.info("skipping unknown option \'" + key + "\' in Alternate Current config");
+										RedstoneOptimization.LOGGER.info("skipping unknown option \'" + key + "\' in {} config",RedstoneOptimization.MOD_NAME);
 									}
 								} catch (Exception e) {
-									AlternateCurrentMod.LOGGER.info("skipping bad value \'" + value + "\' for option \'" + key + "\' in Alternate Current config!", e);
+									RedstoneOptimization.LOGGER.info("skipping bad value \'" + value + "\' for option \'" + key + "\' in "+RedstoneOptimization.MOD_NAME+" config!", e);
 								}
 							}
 						}
@@ -108,7 +109,7 @@ public interface Config {
 
 					modified = false;
 				} catch (IOException e) {
-					AlternateCurrentMod.LOGGER.info("unable to load Alternate Current config!", e);
+					RedstoneOptimization.LOGGER.info("unable to load "+RedstoneOptimization.MOD_NAME+" config!", e);
 					modified = true;
 				}
 			} else {
@@ -120,7 +121,7 @@ public interface Config {
 		public void save(boolean silent) {
 			if (modified) {
 				if (!silent) {
-					AlternateCurrentMod.LOGGER.info("saving Alternate Current config");
+					RedstoneOptimization.LOGGER.info("saving "+RedstoneOptimization.MOD_NAME+" config");
 				}
 
 				try (BufferedWriter bw = Files.newBufferedWriter(path)) {
@@ -134,7 +135,7 @@ public interface Config {
 					bw.write(updateOrder.id());
 					bw.newLine();
 				} catch (IOException e) {
-					AlternateCurrentMod.LOGGER.info("unable to save Alternate Current config!", e);
+					RedstoneOptimization.LOGGER.info("unable to save "+RedstoneOptimization.MOD_NAME+" config!", e);
 				} finally {
 					modified = false;
 				}

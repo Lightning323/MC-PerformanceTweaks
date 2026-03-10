@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import org.lightning323.performancetweaks.optimizations.server.redstone.AlternateCurrentMod;
+import org.lightning323.performancetweaks.optimizations.server.redstone.RedstoneOptimization;
 import org.lightning323.performancetweaks.optimizations.server.redstone.interfaces.mixin.IServerLevel;
 
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ public class RedStoneWireBlockMixin {
 		)
 	)
 	private void alternate_current$onUpdate(Level level, BlockPos pos, BlockState state, CallbackInfo ci) {
-		if (AlternateCurrentMod.on) {
+		if (RedstoneOptimization.on) {
 			// Using redirects for calls to this method makes conflicts with
 			// other mods more likely, so we inject-cancel instead.
 			ci.cancel();
@@ -40,7 +40,7 @@ public class RedStoneWireBlockMixin {
 		)
 	)
 	private void alternate_current$onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston, CallbackInfo ci) {
-		if (AlternateCurrentMod.on) {
+		if (RedstoneOptimization.on) {
 			((IServerLevel)level).alternate_current$getWireHandler().onWireAdded(pos);
 		}
 	}
@@ -53,7 +53,7 @@ public class RedStoneWireBlockMixin {
 		)
 	)
 	private void alternate_current$onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston, CallbackInfo ci) {
-		if (AlternateCurrentMod.on) {
+		if (RedstoneOptimization.on) {
 			((IServerLevel)level).alternate_current$getWireHandler().onWireRemoved(pos, state);
 		}
 	}
@@ -66,7 +66,7 @@ public class RedStoneWireBlockMixin {
 		)
 	)
 	private void alternate_current$onNeighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston, CallbackInfo ci) {
-		if (AlternateCurrentMod.on) {
+		if (RedstoneOptimization.on) {
 			if (((IServerLevel)level).alternate_current$getWireHandler().onWireUpdated(pos)) {
 				ci.cancel(); // needed to fix duplication bugs
 			}
