@@ -9,8 +9,9 @@ version = "${version}"
 displayName = "PerformanceTweaks"
 authors = ""
 description = '''
-
+A performance tweaks mod.
 '''
+accessTransformer = "META-INF/accesstransformer.cfg"
 logoFile = "icon.png"
 
 [[dependencies.perf_tweaks]]
@@ -37,4 +38,4 @@ side = "BOTH"
 [[accessTransformers]]
 ## The file is relative to the output directory of the resources, or the root path inside the jar when compiled
 ## The 'resources' directory represents the root output directory of the resources
-file="META-INF/accesstransformer.cfg"
+file = "META-INF/accesstransformer.cfg"
