@@ -1,6 +1,7 @@
 package org.lightning323.performancetweaks;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.lightning323.performancetweaks.PerformanceTweaks;
 import org.lightning323.performancetweaks.Constants;
 
@@ -8,13 +9,11 @@ public class PerformanceTweaksFabric implements ModInitializer {
     
     @Override
     public void onInitialize() {
-        
-        // This method is invoked by the Fabric mod loader when it is ready
-        // to load your mod. You can access Fabric and Common code in this
-        // project.
-
-        // Use Fabric to bootstrap the Common mod.
-        Constants.LOG.info("Hello Fabric world!");
         PerformanceTweaks.init();
+
+        //Command registration
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            PerformanceTweaks.onRegisterCommands(dispatcher);
+        });
     }
 }

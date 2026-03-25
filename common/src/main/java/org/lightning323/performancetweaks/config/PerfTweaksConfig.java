@@ -1,7 +1,6 @@
 package org.lightning323.performancetweaks.config;
 
 import com.google.gson.annotations.SerializedName;
-import org.lightning323.performancetweaks.config.ConfigManager;
 
 import java.util.HashSet;
 import java.util.List;

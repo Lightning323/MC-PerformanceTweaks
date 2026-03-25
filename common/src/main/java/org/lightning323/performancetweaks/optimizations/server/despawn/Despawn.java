@@ -23,12 +23,19 @@ public final class Despawn {
         // Use BuiltInRegistries for common registry access in 1.20.1
         String entityKey = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();
 
-        entity.persistenceRequired = ConfigManager.INSTANCE.persistentMobs().contains(entityKey)
-                || !hasDespawnableName(entity);
+        //TODO: We have to use a mixin because we can't access the persistenceRequired field
+        /*
+         * https://discord.com/channels/752944675425353768/1050532463090335744/1486481311668502621
+         * 1. I would recommend using mixin accessors for fields / methods
+         * 2. ATs have always been a weird thing, I am guessing you have an error somewhere that forge is just not showing (Its working on fabric)
+         */
+        MobMixin_I entityMixin = (MobMixin_I) entity;
+        entityMixin.setPersistenceRequired(ConfigManager.INSTANCE.persistentMobs().contains(entityKey)
+                || !hasDespawnableName(entity));
     }
 
     public static boolean hasDespawnableName(Mob entity) {
-        if(entity.hasCustomName()) {
+        if (entity.hasCustomName()) {
             return Utils.matchesStackedName(entity.getCustomName().getString(), entity);
         }
         return true;
