@@ -1,5 +1,5 @@
 /.gradle/loom-cache
-
+/buildSrc
 /fabric/run
 /fabric/.gradle
 /forge/.gradle
