@@ -66,5 +66,40 @@
       <option name="name" value="LoomLocalMinecraft" />
       <option name="url" value="file:$PROJECT_DIR$/../../../Performance%20Tweaks/1.20.1/MC-PerformanceTweaks/.gradle/loom-cache/minecraftMaven/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Sponge" />
+      <option name="name" value="Sponge" />
+      <option name="url" value="https://repo.spongepowered.org/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ParchmentMC" />
+      <option name="name" value="ParchmentMC" />
+      <option name="url" value="https://maven.parchmentmc.org/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="NeoForge" />
+      <option name="name" value="NeoForge" />
+      <option name="url" value="https://maven.neoforged.net/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BlameJared" />
+      <option name="name" value="BlameJared" />
+      <option name="url" value="https://maven.blamejared.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Mojang Meta" />
+      <option name="name" value="Mojang Meta" />
+      <option name="url" value="https://maven.neoforged.net/mojang-meta/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="NeoForged Releases" />
+      <option name="name" value="NeoForged Releases" />
+      <option name="url" value="https://maven.neoforged.net/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="LoomGlobalMinecraft" />
+      <option name="name" value="LoomGlobalMinecraft" />
+      <option name="url" value="file:$PROJECT_DIR$/../../../../../.gradle/caches/fabric-loom/minecraftMaven/" />
+    </remote-repository>
   </component>
 </project>

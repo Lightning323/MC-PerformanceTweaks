@@ -16,7 +16,7 @@ import static net.minecraft.commands.Commands.literal;
 
 public class ModCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
-        LiteralArgumentBuilder<CommandSourceStack> builder = Commands.literal(Performancetweaks.MOD_ID)
+        LiteralArgumentBuilder<CommandSourceStack> builder = Commands.literal(Constants.MOD_ID)
                 .requires(source -> source.hasPermission(2)); // Permission check at the top level
 
         /**
