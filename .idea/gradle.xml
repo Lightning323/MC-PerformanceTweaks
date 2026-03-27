@@ -7,9 +7,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/buildSrc" name="buildSrc">
+              <build path="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/buildSrc" name="buildSrc">
                 <projects>
-                  <project path="$PROJECT_DIR$/buildSrc" />
+                  <project path="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/buildSrc" />
                 </projects>
               </build>
             </builds>
@@ -18,11 +18,11 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/fabric" />
-            <option value="$PROJECT_DIR$/forge" />
+            <option value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks" />
+            <option value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/buildSrc" />
+            <option value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/common" />
+            <option value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric" />
+            <option value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

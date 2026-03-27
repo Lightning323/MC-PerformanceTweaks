@@ -11,19 +11,35 @@
         <option name="pluginVersion" value="0.7" />
         <option name="reobfTsrgFile" value="$PROJECT_DIR$/forge/build/moddev/artifacts/namedToIntermediate.tsrg" />
         <processorPath useClasspath="false">
-          <entry name="$PROJECT_DIR$/../../../../../.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5-SNAPSHOT/98b6c982030c7e9d79d3e78b31d86b285f292146/mixin-0.8.5-SNAPSHOT-processor.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5-SNAPSHOT/98b6c982030c7e9d79d3e78b31d86b285f292146/mixin-0.8.5-SNAPSHOT-processor.jar" />
         </processorPath>
         <module name="MultiLoader-Template.forge.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="searge" />
+        <option name="mappingTypes" value="tsrg" />
+        <option name="outRefMapFile" value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/mixin/perf_tweaks.refmap.json" />
+        <option name="outTsrgFile" value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/mixin/perf_tweaks.refmap.json.mappings.tsrg" />
+        <option name="pluginVersion" value="0.7" />
+        <option name="reobfTsrgFile" value="/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/moddev/artifacts/namedToIntermediate.tsrg" />
+        <processorPath useClasspath="false">
+          <entry name="/mnt/SharedVolume/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5-SNAPSHOT/98b6c982030c7e9d79d3e78b31d86b285f292146/mixin-0.8.5-SNAPSHOT-processor.jar" />
+        </processorPath>
+        <module name="org.lightning323.performancetweaks.MultiLoader-Template.forge.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MultiLoader-Template.fabric" options="&quot;-AoutRefMapFile=$PROJECT_DIR$/fabric/build/classes/java/main/perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=$PROJECT_DIR$/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.main.tiny&quot; -AinMapFileNamedIntermediary=$PROJECT_DIR$/../../../../../.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
-      <module name="MultiLoader-Template.fabric.main" options="&quot;-AoutRefMapFile=$PROJECT_DIR$/fabric/build/classes/java/main/perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=$PROJECT_DIR$/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.main.tiny&quot; -AinMapFileNamedIntermediary=$PROJECT_DIR$/../../../../../.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
-      <module name="MultiLoader-Template.fabric.test" options="&quot;-AoutRefMapFile=$PROJECT_DIR$/fabric/build/classes/java/test/test-perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=$PROJECT_DIR$/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.test.tiny&quot; -AinMapFileNamedIntermediary=$PROJECT_DIR$/../../../../../.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
+      <module name="MultiLoader-Template.fabric" options="&quot;-AoutRefMapFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/classes/java/main/perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.main.tiny&quot; -AinMapFileNamedIntermediary=/mnt/SharedVolume/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
+      <module name="MultiLoader-Template.fabric.main" options="&quot;-AoutRefMapFile=$PROJECT_DIR$/fabric/build/classes/java/main/perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=$PROJECT_DIR$/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.main.tiny&quot; -AinMapFileNamedIntermediary=$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
+      <module name="MultiLoader-Template.fabric.test" options="&quot;-AoutRefMapFile=$PROJECT_DIR$/fabric/build/classes/java/test/test-perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=$PROJECT_DIR$/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.test.tiny&quot; -AinMapFileNamedIntermediary=$USER_HOME$/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
       <module name="MultiLoader-Template.forge.main" options="&quot;-AreobfTsrgFile=$PROJECT_DIR$/forge/build/moddev/artifacts/namedToIntermediate.tsrg&quot; &quot;-AoutTsrgFile=$PROJECT_DIR$/forge/build/mixin/perf_tweaks.refmap.json.mappings.tsrg&quot; &quot;-AoutRefMapFile=$PROJECT_DIR$/forge/build/mixin/perf_tweaks.refmap.json&quot; -AmappingTypes=tsrg -ApluginVersion=0.7 -AdefaultObfuscationEnv=searge" />
+      <module name="org.lightning323.performancetweaks.MultiLoader-Template.fabric.main" options="&quot;-AoutRefMapFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/classes/java/main/perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.main.tiny&quot; -AinMapFileNamedIntermediary=/mnt/SharedVolume/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
+      <module name="org.lightning323.performancetweaks.MultiLoader-Template.fabric.test" options="&quot;-AoutRefMapFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/classes/java/test/test-perf_tweaks.refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/fabric/build/loom-cache/mixin-map-loom.mappings.1_20_1.layered+hash.1899487486-v2.test.tiny&quot; -AinMapFileNamedIntermediary=/mnt/SharedVolume/.gradle/caches/fabric-loom/1.20.1/loom.mappings.1_20_1.layered+hash.1899487486-v2/mappings.tiny" />
+      <module name="org.lightning323.performancetweaks.MultiLoader-Template.forge.main" options="&quot;-AreobfTsrgFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/moddev/artifacts/namedToIntermediate.tsrg&quot; &quot;-AoutTsrgFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/mixin/perf_tweaks.refmap.json.mappings.tsrg&quot; &quot;-AoutRefMapFile=/mnt/SharedVolume/Documents/GitHub/Performance Tweaks/1.20.1/MC-PerformanceTweaks/forge/build/mixin/perf_tweaks.refmap.json&quot; -AmappingTypes=tsrg -ApluginVersion=0.7 -AdefaultObfuscationEnv=searge" />
     </option>
   </component>
 </project>
