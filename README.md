@@ -16,3 +16,14 @@ Creative Commons Legal Code CC0 1.0 Universal (March 2026)
 
 https://www.curseforge.com/minecraft/mc-mods/fxs-rail-optimization
 Licensed GNU LESSER GENERAL PUBLIC LICENSE (March 2026)
+
+
+## Planned
+Mods to add next:
+
+Very many players
+* https://github.com/RelativityMC/VMP-forge
+
+Noisium
+* https://github.com/Steveplays28/noisium
+* https://www.curseforge.com/minecraft/mc-mods/noisium-legacy/
