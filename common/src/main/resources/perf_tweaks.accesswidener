@@ -1,0 +1,10 @@
+accessWidener v2 named
+
+# Matches the Frustum access change in META-INF/accesstransformer.cfg.
+accessible class net/minecraft/client/renderer/culling/Frustum
+accessible field net/minecraft/client/renderer/culling/Frustum camX D
+accessible field net/minecraft/client/renderer/culling/Frustum camY D
+accessible field net/minecraft/client/renderer/culling/Frustum camZ D
+mutable field net/minecraft/client/renderer/culling/Frustum camX D
+mutable field net/minecraft/client/renderer/culling/Frustum camY D
+mutable field net/minecraft/client/renderer/culling/Frustum camZ D

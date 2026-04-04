@@ -27,3 +27,17 @@ Very many players
 Noisium
 * https://github.com/Steveplays28/noisium
 * https://www.curseforge.com/minecraft/mc-mods/noisium-legacy/
+## Access transformers / access wideners (Frustum example)
+For Minecraft `1.20.1` multiloader setup in this repo:
+
+- LegacyForge reads `common/src/main/resources/META-INF/accesstransformer.cfg` via `forge/build.gradle`.
+- Fabric reads `common/src/main/resources/perf_tweaks.accesswidener` via `fabric/build.gradle` and `fabric.mod.json`.
+
+If IntelliJ still reports `private access` after editing these files:
+
+1. Reimport the Gradle project (`Reload All Gradle Projects`).
+2. Regenerate run configs from Gradle tasks (`:fabric:genSources` / `:forge:prepareRuns` if needed).
+3. Build with Gradle once from terminal (`./gradlew clean build`) so transformed classpath is refreshed.
+4. In IntelliJ, enable *Build and run using: Gradle* for the project.
+
+This keeps IDE classpaths aligned with the transformed access rules used by each loader.

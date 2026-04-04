@@ -19,6 +19,7 @@
           "org.lightning323.performancetweaks.PerformanceTweaksFabric"
         ]
     },
+    "accessWidener": "perf_tweaks.accesswidener",
     "mixins": [
     ],
     "depends": {
