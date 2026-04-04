@@ -5,16 +5,16 @@
     "refmap": "${mod_id}.refmap.json",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "server.redstone.MinecraftServerMixin",
-        "server.redstone.RedStoneWireBlockMixin",
-        "server.redstone.ServerLevelMixin",
-        "server.rail.PoweredRailBlockMixin",
-        "server.despawn.LivingEntityMixin",
-        "server.despawn.MobMixin"
+        "alternateCurrent.MinecraftServerMixin",
+        "alternateCurrent.RedStoneWireBlockMixin",
+        "alternateCurrent.ServerLevelMixin",
+        "railOptimization.PoweredRailBlockMixin",
+        "despawn.LivingEntityMixin",
+        "despawn.MobMixin"
     ],
     "client": [
-        "client.entityCollision.MixinEntity",
-        "client.entityCollision.MixinLivingEntity"
+        "entityCollision.MixinEntity",
+        "entityCollision.MixinLivingEntity"
     ],
     "server": [
     ],
