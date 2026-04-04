@@ -19,10 +19,7 @@ public abstract class SimpleBakedModelMixin implements IForgeBakedModel {
     @Final
     @Mutable
     protected List<RenderType> fabulousItemRenderTypes;
-    /**
-     * @author MoePus
-     * @reason Cache Render Types
-     */
+
     @Overwrite(remap = false)
     public @NotNull List<RenderType> getRenderTypes(@NotNull ItemStack itemStack, boolean fabulous) {
         if (!fabulous) {
