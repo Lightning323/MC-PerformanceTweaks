@@ -1,5 +1,6 @@
 package org.lightning323.performancetweaks.mixin.flerovium.Item;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import org.lightning323.performancetweaks.PerformanceTweaks;
 import org.lightning323.performancetweaks.config.ConfigManager;
 import org.lightning323.performancetweaks.config.PerfTweaksConfig;

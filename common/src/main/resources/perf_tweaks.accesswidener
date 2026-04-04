@@ -1,0 +1,22 @@
+accessWidener v2 named
+
+## Frustum fields (double and boolean)
+#accessible field net/minecraft/client/renderer/culling/Frustum f_112996_ D
+#accessible field net/minecraft/client/renderer/culling/Frustum f_112997_ D
+#accessible field net/minecraft/client/renderer/culling/Frustum f_112998_ D
+#accessible field net/minecraft/client/renderer/culling/Frustum f_252531_ Z
+#
+## Particle fields (double and float)
+#accessible field net/minecraft/client/particle/Particle f_107212_ D
+#accessible field net/minecraft/client/particle/Particle f_107213_ D
+#accessible field net/minecraft/client/particle/Particle f_107214_ D
+#accessible field net/minecraft/client/particle/Particle f_107221_ F
+#accessible field net/minecraft/client/particle/Particle f_107222_ F
+#
+## RenderSystem and BufferBuilder
+#accessible field com/mojang/blaze3d/systems/RenderSystem modelViewMatrix Lcom/mojang/math/Matrix4f;
+#accessible field com/mojang/blaze3d/vertex/BufferBuilder f_85658_ Lcom/mojang/blaze3d/vertex/VertexFormat;
+#
+## Library and ChannelPool
+#accessible field com/mojang/blaze3d/audio/Library f_83689_ I
+#accessible class com/mojang/blaze3d/audio/Library$ChannelPool
