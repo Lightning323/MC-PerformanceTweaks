@@ -5,8 +5,23 @@
     "refmap": "${mod_id}.refmap.json",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
+        "flerovium.Chunk.OcclusionCullerMixin"
     ],
     "client": [
+        "Block.CrumblingRendererMixin",
+        "Chunk.FrustumMixin",
+        "Entity.ClientLevelMixin",
+        "Entity.ModelPartMixin",
+        "Item.ItemEntityRenderMixin",
+        "Item.ItemRendererMixin",
+        "Item.ItemTransformMixin",
+        "Item.SimpleBakedModelMixin",
+        "Particle.ParticleEngineMixin",
+        "Particle.ParticleMixin",
+        "Particle.SingleQuadParticleMixin",
+        "Particle.SkipFarTerrainParticle",
+        "Sound.ClientLevelMixin",
+        "Sound.SoundEngineMixin"
     ],
     "server": [
     ],

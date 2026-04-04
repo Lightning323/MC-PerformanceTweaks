@@ -7,9 +7,9 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import org.lightning323.performancetweaks.config.ConfigManager;
-import org.lightning323.performancetweaks.optimizations.server.despawn.DespawnCommandUtils;
-import org.lightning323.performancetweaks.optimizations.server.redstone.RedstoneOptimization;
-import org.lightning323.performancetweaks.optimizations.server.redstone.command.RedstoneCommandUtils;
+import org.lightning323.performancetweaks.optimizations.despawn.DespawnCommandUtils;
+import org.lightning323.performancetweaks.optimizations.alternateCurrent.RedstoneOptimization;
+import org.lightning323.performancetweaks.optimizations.alternateCurrent.command.RedstoneCommandUtils;
 
 import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
